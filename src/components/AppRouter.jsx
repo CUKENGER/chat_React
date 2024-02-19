@@ -2,10 +2,14 @@ import {Route, Routes, useNavigate } from 'react-router-dom';
 import { privateRoutes, publicRoutes } from '../routes';
 import { CHAT_ROUTE, LOGIN_ROUTE } from '../utils/consts';
 import { useEffect } from 'react';
+import { getAuth } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const AppRouter = () => {
 
-    const user = false;
+    const auth = getAuth();
+    const [user] = useAuthState(auth);
+    
     const navigate = useNavigate();
 
     useEffect(() => {
