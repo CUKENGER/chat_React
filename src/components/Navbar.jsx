@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { LOGIN_ROUTE } from '../utils/consts';
 import { getAuth } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 const Navbar = () => {
 
@@ -17,10 +17,10 @@ const Navbar = () => {
     const theme = createTheme({
     palette: {
         primary: {
-        main: '#aad6c7', // Замените на цвет, который вы хотите использовать для основного цвета
+        main: '#aad6c7',
         },
         secondary: {
-        main: '#dc004e', // Замените на цвет, который вы хотите использовать для второстепенного цвета
+        main: '#dc004e',
         },
     },
     });

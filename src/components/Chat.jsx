@@ -1,3 +1,4 @@
+import React from 'react';
 import userAva from '../assets/user_avatar-left.png'
 import attachBtn from '../assets/screpka.png';
 import sendBtn from '../assets/send.png';
@@ -10,6 +11,13 @@ const Chat = () => {
 
     const auth = getAuth();
     const [user, loading, error] = useAuthState(auth);
+    const [isSwitch, setIsSwitch] = React.useState(false)
+
+    const handleSwitchTheme = () => {
+        let isSwitched = !isSwitch
+        setIsSwitch(isSwitched)
+        console.log(isSwitched)
+    }
 
     return (
         // <Container>
@@ -39,7 +47,7 @@ const Chat = () => {
 
 
         <>
-            <div className="chat">
+            <div className={isSwitch ? 'dark__chat' : "chat"}>
                 <div className="chat__wrapper">
                     <div className="chat__container">
                         <div className="left__panel-container">
@@ -80,7 +88,7 @@ const Chat = () => {
                                 <h4 className="right__panel-user-name">UserName</h4>
                                 <div className="switch__theme-container">
                                     <button>
-                                        <img className='switch' src={switchThemeBtn}/>
+                                        <img onClick={handleSwitchTheme} className='switch' src={switchThemeBtn}/>
                                     </button>
                                 </div>
                             </div>
@@ -91,7 +99,7 @@ const Chat = () => {
                                 <button>
                                     <img className='attach__btn' src={attachBtn}/>
                                 </button>
-                                <input className='input__message' id="message" type="text" />
+                                <input className={isSwitch ? 'input__dark' : 'input__message'} id="message" type="text" />
                                 <label id='message-label' className='label__message' htmlFor="message">type message</label>
                                 <button>
                                     <img className='send__btn' src={sendBtn}/>

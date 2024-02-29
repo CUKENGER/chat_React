@@ -16,7 +16,7 @@
     column-gap: 20px;
     justify-content: space-around;
     align-items: flex-start;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 p{
@@ -108,6 +108,11 @@ button{
     color: #aad6c7;
 }
 
+.input__dark{
+    background-color: #212121;
+    border: none;
+}
+
 
 input:focus{
     border: none;
@@ -142,6 +147,15 @@ input:focus{
 .send__btn{
     width: 27px;
     height: auto;
+}
+
+.dark__chat{
+    background-color: #212121;
+    color: white;
+}
+
+.right__panel-container{
+    padding-bottom: 58px;
 }
 
 
